@@ -11,10 +11,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RestaurantConfig {
     @Bean
+    @Qualifier("NyPizza")
     public Pizza nyPizza(){
         return new NYPizza();
     }
 
+    @Bean
+    @Qualifier("ItalianPizza")
+    public Pizza italianPizza(){
+        return new ItalianPizza();
+    }
 
     @Bean
     public Restaurant restaurant(){
